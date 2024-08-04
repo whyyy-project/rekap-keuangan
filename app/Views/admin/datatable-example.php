@@ -1,4 +1,4 @@
-<div class="container-fluid pt-1 px-4">
+<div class="container-fluid pt-4 px-4">
     <h4>Data Uang Masuk</h4>
 <table id="example" class="table table-striped" style="width:100%">
         <thead>
