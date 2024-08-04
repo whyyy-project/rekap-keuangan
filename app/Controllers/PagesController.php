@@ -25,4 +25,12 @@ class PagesController extends BaseController
     ];
         return view('admin/blank', $data);
     }
+    public function login()
+    {
+      $data = [
+      'namaSistem' => $this->namaSistem,
+      'page' => "Login",
+    ];
+        return view('signin', $data);
+    }
 }

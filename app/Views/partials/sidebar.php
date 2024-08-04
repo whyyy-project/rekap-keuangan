@@ -52,16 +52,6 @@
                         </div>
                     </div>
 
-
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle <?= $page == "Blank" ? "active" : "" ?>" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="<?= base_url() ?>" class="dropdown-item">Sign In</a>
-                            <a href="<?= base_url() ?>" class="dropdown-item">Sign Up</a>
-                            <a href="<?= base_url() ?>" class="dropdown-item">404 Error</a>
-                            <a href="<?= base_url() ?>" class="dropdown-item <?= $page == "Blank" ? "active" : "" ?>">Blank Page</a>
-                        </div>
-                    </div>
                 </div>
             </nav>
         </div>

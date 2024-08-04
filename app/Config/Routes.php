@@ -7,3 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'PagesController::index');
 $routes->get('/blank', 'PagesController::blank');
+$routes->get('/login', 'PagesController::login');
