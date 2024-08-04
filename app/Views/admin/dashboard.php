@@ -52,12 +52,13 @@
             </div>
             <!-- Sale & Revenue End -->
 
-            <div class="container-fluid pt-1 px-4">
+            <!-- <div class="container-fluid pt-1 px-4">
               <div class="row vh-100 bg-light rounded mx-0 p-2 pt-3">
                 <h5>Lorem ipsum dolor sit amet.</h5>
               </div>
-            </div>
-
+            </div> -->
             <!-- Content End -->
+
+            <?= $this->include('admin/datatable-example') ?>
         <!-- Content End -->
     <?php $this->endSection(); ?>

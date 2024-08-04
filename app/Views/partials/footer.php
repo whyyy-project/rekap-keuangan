@@ -5,10 +5,6 @@
                         <div class="col-12 col-sm-6 text-center text-sm-start">
                             &copy; <?= date('Y') == "2024" ? date("Y") : "2024-".date("Y") ?> <a href="<?= base_url() ?>" class="text-success"><?= $namaSistem ?></a>, All Right Reserved. 
                         </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com" target="_blank">HTML Codex</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -20,8 +16,13 @@
     
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- datatable -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.bootstrap5.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="<?= base_url() ?>assets/lib/chart/chart.min.js"></script>
     <script src="<?= base_url() ?>assets/lib/easing/easing.min.js"></script>
     <script src="<?= base_url() ?>assets/lib/waypoints/waypoints.min.js"></script>
@@ -32,6 +33,12 @@
 
     <!-- Template Javascript -->
     <script src="<?= base_url() ?>assets/js/main.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
 </body>
 
 </html>
