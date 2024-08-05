@@ -14,6 +14,34 @@
         <a href="#" class="btn btn-lg btn-success btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
     
+<!-- Modal -->
+<div class="modal fade" id="logoutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+<div class="modal-content card">
+  <p class="cookieHeading">Apakah anda yakin untuk LogOut ?</p>
+  <p>jika anda logout, maka diharuskan untuk melakukan login lagi dari awal</p>
+  <div class="buttonContainer">
+    <button type="button" class="acceptButton">Allow</button>
+  <button type="button" class="declineButton" data-bs-dismiss="modal">Decline</button>
+  </div>
+  
+
+</div>
+
+
+</div>
+
+
+<script>
+  const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+</script>
+
+
 
     <!-- JavaScript Libraries -->
     <!-- datatable -->
