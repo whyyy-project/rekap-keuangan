@@ -18,10 +18,10 @@
 <div class="modal fade" id="logoutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
   <div class="modal-dialog">
 <div class="modal-content card">
-  <p class="cookieHeading">Apakah anda yakin untuk LogOut ?</p>
+  <p class="cookieHeading">Apakah anda yakin untuk Logout ?</p>
   <p>jika anda logout, maka diharuskan untuk melakukan login lagi dari awal</p>
-  <div class="buttonContainer">
-    <button type="button" class="acceptButton">Allow</button>
+  <div class="buttonContainer text-center">
+    <a href="<?= base_url() ?>login" class="acceptButton text-white">Accept</a>
   <button type="button" class="declineButton" data-bs-dismiss="modal">Decline</button>
   </div>
   

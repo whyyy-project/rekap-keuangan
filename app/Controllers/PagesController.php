@@ -14,7 +14,7 @@ class PagesController extends BaseController
       'namaSistem' => $this->namaSistem,
       // 'navigasi' => "<a href='".base_url()."'>Dashboard</a> » Dashboard"
     ];
-        return view('admin/dashboard', $data);
+        return view('admin/dashboard/dashboard', $data);
     } 
     public function blank()
     {

@@ -46,9 +46,10 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle <?= $page == "Bendahara" ? "active" : "" ?>" data-bs-toggle="dropdown"><i class="fa-regular fa-address-book"></i> Bendahara</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="<?= base_url() ?>" class="dropdown-item">Bendahara Tingkat 1</a>
-                            <a href="<?= base_url() ?>" class="dropdown-item">Bendahara Tingkat 2</a>
-                            <a href="<?= base_url() ?>" class="dropdown-item">Bendahara Tingkat 3</a>
+                            <a href="<?= base_url() ?>" class="dropdown-item"> Tingkat 1</a>
+                            <a href="<?= base_url() ?>" class="dropdown-item"> Tingkat 2</a>
+                            <a href="<?= base_url() ?>" class="dropdown-item"> Tingkat 3</a>
+                            <a href="<?= base_url() ?>" class="dropdown-item"> Tingkat 4</a>
                         </div>
                     </div>
 

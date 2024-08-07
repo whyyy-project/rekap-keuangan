@@ -3,7 +3,7 @@
   
   <div class="col-12 d-flex justify-content-between align-items-center">
   <div class="col">
-  <h6>Data Uang Masuk</h6>
+  <h5>Data Uang Masuk</h5>
   </div>
   <div class="col d-inline text-end">
     

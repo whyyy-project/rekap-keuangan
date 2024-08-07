@@ -89,29 +89,46 @@
 
 
 //     // Salse & Revenue Chart
-//     var ctx2 = $("#salse-revenue").get(0).getContext("2d");
-//     var myChart2 = new Chart(ctx2, {
-//         type: "line",
-//         data: {
-//             labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-//             datasets: [{
-//                     label: "Salse",
-//                     data: [15, 30, 55, 45, 70, 65, 85],
-//                     backgroundColor: "rgba(0, 156, 255, .5)",
-//                     fill: true
-//                 },
-//                 {
-//                     label: "Revenue",
-//                     data: [99, 135, 170, 130, 190, 180, 270],
-//                     backgroundColor: "rgba(0, 156, 255, .3)",
-//                     fill: true
-//                 }
-//             ]
-//             },
-//         options: {
-//             responsive: true
-//         }
-//     });
+    var ctx2 = $("#salse-revenue").get(0).getContext("2d");
+    var myChart2 = new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: [
+          'Jan 2024',
+          'Feb 2024',
+          'Mar 2024',
+          'Apr 2024',
+          'Mei 2024',
+          'Jun 2024',
+          'Jul 2024',
+          'Ags 2024',
+          'Sep 2024',
+        ],
+        datasets: [
+          {
+            label: 'Masuk',
+            data: [
+              1500000, 3000000, 5500000, 4500000, 7000000, 6500000, 8500000,
+              2000000, 3000000,
+            ],
+            backgroundColor: 'rgba(0, 156, 255, .5)',
+            fill: true,
+          },
+          {
+            label: 'Keluar',
+            data: [
+              9900000, 13500000, 17000000, 13000000, 19000000, 18000000,
+              12000000, 9900000, 13500000,
+            ],
+            backgroundColor: 'rgba(0, 156, 255, .3)',
+            fill: true,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+      },
+    });
     
 
 
