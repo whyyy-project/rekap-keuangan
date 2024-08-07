@@ -16,5 +16,25 @@
     </div>
     <h5 class="fw-bold">Rp. 2.719.531.624.000</h5>
     <canvas id="salse-revenue" width="858" height="429" style="display: block; box-sizing: border-box; height: 429px; width: 858px;"></canvas>
+
   </div>
 </div>
+
+
+
+<script>
+    // window.chartLabels = <?= $labelBulanan ?>;
+
+    window.chartLabels = [
+          'Jan 2024',
+          'Feb 2024',
+          'Mar 2024',
+          'Apr 2024',
+          'Mei 2024',
+          'Jun 2024',
+          'Jul 2024',
+          'Ags 2024',
+          'Sep 2024',
+        ];
+    window.chartDataMasuk = <?= $dataMasukBulanan ?>;
+</script>
