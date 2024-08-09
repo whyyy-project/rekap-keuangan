@@ -21,11 +21,7 @@ use Psr\Log\LoggerInterface;
  */
 abstract class BaseController extends Controller
 {
-    public $namaSistem;
-    function __construct()
-    {
-      $this->namaSistem = "Inventaris";
-    }
+
     /**
      * Instance of the main Request object.
      *

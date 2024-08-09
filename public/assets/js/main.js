@@ -53,7 +53,7 @@
         {
           label: 'Masuk',
           data: dataMasuk,
-          backgroundColor: 'rgba(0, 156, 255, .5)',
+          backgroundColor: 'rgba(0, 255, 70, .3)',
           fill: true,
         },
         {
@@ -62,7 +62,7 @@
             9900000, 13500000, 17000000, 13000000, 19000000, 18000000, 12000000,
             9900000, 13500000,
           ],
-          backgroundColor: 'rgba(0, 156, 255, .3)',
+          backgroundColor: 'rgba(0, 70, 255, .5)',
           fill: true,
         },
       ],

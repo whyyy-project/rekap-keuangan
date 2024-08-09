@@ -10,6 +10,51 @@ class RekapKeuanganMasukModel extends Model
     protected $table2 = 'um_taawun';
    protected $tableSantri = 'santri'; // Tabel santri
 
+
+  //  berdasarkan 12 bulan terakhir 
+    public function getTotalMonthly()
+    {
+        $db = \Config\Database::connect();
+
+        // Menyimpan hasil akhir
+        $monthlyTotals = [];
+
+        // Loop selama 12 bulan terakhir
+        for ($i = 0; $i < 12; $i++) {
+            // Mendapatkan bulan dan tahun untuk iterasi saat ini
+            $month = date('m', strtotime("-$i month"));
+            $year = date('Y', strtotime("-$i month"));
+            $monthLabel = date('F Y', strtotime("-$i month"));
+
+            // Menghitung total nominal dari tabel um_umum untuk bulan ini
+            $query1 = $db->table($this->table1)
+                ->selectSum('nominal')
+                ->where('YEAR(created_at)', $year)
+                ->where('MONTH(created_at)', $month)
+                ->get();
+            $result1 = $query1->getRow()->nominal;
+
+            // Menghitung total nominal dari tabel um_taawun untuk bulan ini
+            $query2 = $db->table($this->table2)
+                ->selectSum('nominal')
+                ->where('YEAR(created_at)', $year)
+                ->where('MONTH(created_at)', $month)
+                ->get();
+            $result2 = $query2->getRow()->nominal;
+
+            // Menggabungkan total nominal dari kedua tabel
+            $totalMonthly = $result1 + $result2;
+
+            // Menyimpan total bulanan dalam array dengan format 'Bulan Tahun'
+            $monthlyTotals[$monthLabel] = $totalMonthly;
+        }
+
+        // Mengembalikan hasil akhir tanpa mengubah format label bulan
+        return array_reverse($monthlyTotals); // Mengembalikan urutan dari bulan terlama ke terbaru
+    }
+
+
+
     // Fungsi untuk menghitung total tahunan
     public function getTotalAnnual($year)
     {
@@ -66,7 +111,7 @@ class RekapKeuanganMasukModel extends Model
         
         // Mendapatkan data dari tabel um_taawun dan join dengan tabel santri
         $query2 = $db->table($this->table2)
-            ->select('um_taawun.pembayaran, um_taawun.nominal, um_taawun.created_at as date')
+            ->select('um_taawun.id_santri, um_taawun.keterangan, um_taawun.pembayaran as jenis, um_taawun.nominal, um_taawun.created_at as date')
             ->join($this->tableSantri . ' s', 's.id = um_taawun.id_santri')
             ->select('s.nama as nama') // Mengambil nama dari tabel santri
             ->get();

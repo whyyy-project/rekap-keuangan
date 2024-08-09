@@ -3,7 +3,7 @@
   
   <div class="col-12 d-flex justify-content-between align-items-center">
   <div class="col">
-  <h5>Data Uang Masuk</h5>
+  <h5>Data Uang Keluar</h5>
   </div>
   <div class="col d-inline text-end">
     
@@ -23,7 +23,7 @@
 </div>
     
   
-  <table id="example" class="table table-striped" style="width:100%">
+  <table id="tabelUangKeluar" class="table table-striped" style="width:100%">
       <thead>
           <tr>
             <th>Tanggal</th>

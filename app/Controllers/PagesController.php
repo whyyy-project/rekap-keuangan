@@ -4,36 +4,39 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\RekapKeuanganMasukModel;
+use App\Models\SantriModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class PagesController extends BaseController
 {
   public $rekap;
+  public $santri;
   function __construct(){
     $this->rekap = new RekapKeuanganMasukModel();
+    $this->santri = new SantriModel();
   }
     public function index()
     {
+    session()->set('nama', 'Wahyu');
       $tahun = $this->request->getGet('tahun');
       if (!$tahun) {
         $tahun = date('Y');
       }
     $rekapMasukTahunan = $this->rekap->getTotalAnnual($tahun);
     $rekapMasukKeseluruhan = $this->rekap->getTotalOverall();
-    $grafikBulananMasuk = $this->rekap->getMonthlyTotals($tahun);
+    $grafikBulananMasuk = $this->rekap->getTotalMonthly();
     $dataUangMasuk = $this->rekap->getDataUangMasuk();
+    
+    $labels = [];
+    $dataMasukBulanan = [];
+    
+    foreach ($grafikBulananMasuk as $bulan => $nominal) {
+        $labels[] = $bulan;  // Key bulan sebagai label
+        $dataMasukBulanan[] = $nominal;  // Value sebagai nominal
+    }
 
-            // Mengolah data untuk chart
-        $labels = [];
-        $dataMasukBulanan = [];
-
-        foreach ($grafikBulananMasuk as $data) {
-            $labels[] = $data['bulan'];
-            $dataMasukBulanan[] = $data['nominal'];
-        }
       $data = [
       'page' => "Dashboard",
-      'namaSistem' => $this->namaSistem,
       'rekapMasukTahunan' => $rekapMasukTahunan,
       'rekapMasukKeseluruhan' => $rekapMasukKeseluruhan,
       'dataMasukBulanan' => json_encode($dataMasukBulanan),
@@ -43,10 +46,19 @@ class PagesController extends BaseController
     ];
         return view('admin/dashboard/dashboard', $data);
     } 
+    public function santri()
+    {
+    $dataSantri = $this->santri->getSantriWithDetails();
+      $data = [
+      'page' => "Santri",
+      'navigasi' => "<a href='".base_url()."'>Dashboard</a> » Santri",
+      'dataSantri' => $dataSantri,
+    ];
+        return view('admin/santri/data-santri', $data);
+    }
     public function blank()
     {
       $data = [
-      'namaSistem' => $this->namaSistem,
       'page' => "Blank",
       'navigasi' => "<a href='".base_url()."'>Dashboard</a> » Blank"
     ];
@@ -55,7 +67,6 @@ class PagesController extends BaseController
     public function login()
     {
       $data = [
-      'namaSistem' => $this->namaSistem,
       'page' => "Login",
     ];
         return view('signin', $data);

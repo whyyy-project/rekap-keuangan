@@ -2,7 +2,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="<?= base_url() ?>" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-success"><img src="<?= base_url() ?>favicon.png" width="25%" style="margin-right:10px" alt="<?= $namaSistem ?>"><?= $namaSistem ?></h3>
+                    <h3 class="text-success"><img src="<?= base_url() ?>favicon.png" width="25%" style="margin-right:10px" alt="E-Financial">E-Financial</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -10,7 +10,7 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
+                        <h6 class="mb-0"><?= session()->get('nama') ?></h6>
                         <span>Admin</span>
                     </div>
                 </div>
@@ -37,21 +37,13 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle <?= $page == "Santri" ? "active" : "" ?>" data-bs-toggle="dropdown"><i class="fa-duotone fa-solid fa-users"></i> Santri</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="<?= base_url() ?>" class="dropdown-item"><i class="fa-solid fa-people-group"></i> Data Santri</a>
+                            <a href="<?= base_url() ?>santri" class="dropdown-item"><i class="fa-solid fa-people-group"></i> Data Santri</a>
                             <a href="<?= base_url() ?>" class="dropdown-item"><i class="fa-solid fa-person-shelter"></i> Komplek</a>
                             <a href="<?= base_url() ?>" class="dropdown-item"><i class="fa-regular fa-id-badge"></i> Jenis Santri</a>
                             <a href="<?= base_url() ?>" class="dropdown-item"><i class="fa-solid fa-user-plus"></i> Biaya Santri Baru</a>
                         </div>
                     </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle <?= $page == "Bendahara" ? "active" : "" ?>" data-bs-toggle="dropdown"><i class="fa-regular fa-address-book"></i> Bendahara</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="<?= base_url() ?>" class="dropdown-item"> Tingkat 1</a>
-                            <a href="<?= base_url() ?>" class="dropdown-item"> Tingkat 2</a>
-                            <a href="<?= base_url() ?>" class="dropdown-item"> Tingkat 3</a>
-                            <a href="<?= base_url() ?>" class="dropdown-item"> Tingkat 4</a>
-                        </div>
-                    </div>
+                    <a href="<?= base_url() ?>" class="nav-item nav-link <?= $page == "Bendahara" ? "active" : "" ?>"><i class="fa-regular fa-address-book me-2"></i>Bendahara</a>
 
                 </div>
             </nav>

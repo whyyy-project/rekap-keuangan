@@ -35,7 +35,7 @@
                             <i class="fa fa-money-check-dollar fa-3x text-success"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Rekap Masuk</p>
-                                <h6 class="mb-0">Rp. Rp. <?= number_format($rekapMasukKeseluruhan, 0, ',', '.') ?></h6>
+                                <h6 class="mb-0">Rp. <?= number_format($rekapMasukKeseluruhan, 0, ',', '.') ?></h6>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,6 @@
                 </div>
             </div>
             <!-- Content End -->
-            <?php dd($dataUangMasuk) ?>
             <?= $this->include('admin/dashboard/grafik') ?>
             <?= $this->include('admin/dashboard/tabel-uang-masuk') ?>
             <?= $this->include('admin/dashboard/tabel-uang-keluar') ?>
